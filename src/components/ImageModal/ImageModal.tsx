@@ -1,7 +1,7 @@
 import ReactModal from "react-modal";
 import styles from "./ImageModal.module.css";
 import { ClimbingBoxLoader } from "react-spinners";
-import { Image } from "../App/App.types";
+
 
 interface ImageModalProps {
   photo: Image;

@@ -90,7 +90,7 @@ const App:React.FC = () => {
       {isError && <ErrorMessage />}
       {photos.length > 0 && <LoadMoreBtn onNextPage={nextPagePusher} />}
       {
-        // photos.length > 0
+        
         selectedPhoto !== null && (
           <ImageModal photo={selectedPhoto} onClose={closeModal} />
         )
