@@ -5,6 +5,7 @@ interface ImageCardProps {
   photo: any;
   onClick: () => void;
   user: string;
+  username: string;
 }
 const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
   console.log("photo !!!!", photo.user.username)
