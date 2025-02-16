@@ -1,11 +1,13 @@
 import ReactModal from "react-modal";
 import styles from "./ImageModal.module.css";
-import { ClimbingBoxLoader } from "react-spinners";
+
 
 
 interface ImageModalProps {
   photo: Image;
   onClose: () => void;
+  user: string;
+  name: string;
   
 }
 
@@ -28,6 +30,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => (
         alt={photo.alt_description}
       />
       <p className={styles.text}>{photo.alt_description}</p>
+  
            <button onClick={onClose}>Close</button>
     </div>
   </ReactModal>

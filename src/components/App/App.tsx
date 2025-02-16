@@ -40,8 +40,8 @@ const App:React.FC = () => {
     });
   };
 
-  const openModal = (image: Image) => {
-    setSelectedPhoto(image);
+  const openModal = (photo: Image) => {
+    setSelectedPhoto(photo);
   };
 
   const closeModal = () => {
