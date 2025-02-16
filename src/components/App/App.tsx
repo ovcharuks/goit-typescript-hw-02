@@ -76,7 +76,7 @@ const App:React.FC = () => {
     getPhotosData();
   }, [serchValue, page]);
 
-  console.log("photoURLS", selectedPhoto);
+  console.log("selectedPhoto", selectedPhoto);
   return (
     <>
       <SearchBar notify={notify} onSearch={handleSearchValue} />

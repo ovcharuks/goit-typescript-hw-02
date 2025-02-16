@@ -3,21 +3,18 @@ import styles from "./ImageModal.module.css";
 
 
 
-interface ImageModalProps {
-  photo: Image;
-  onClose: () => void;
-  user: string;
-  name: string;
-  
-}
+
 
 interface Image {
   id: string;
   urls: { small: string; regular: string };
   alt_description: string;
-  user: string;
-  name: any;
+ 
 }
+interface ImageModalProps {
+  photo: Image;
+  onClose: () => void;
+ }
 
 
 const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => (
