@@ -17,7 +17,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
           alt={photo.alt_description}
           className={photo}
         />
-        <div className={styles.cardDescription}>Athor: {photo.user.username}</div>
+        {/* <div className={styles.cardDescription}>Athor: {photo.user.username}</div> */}
         
       </div>
     </>
