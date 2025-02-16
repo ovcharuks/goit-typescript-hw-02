@@ -7,10 +7,11 @@ import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
-import ErrorMessage from "/src/components/ErrorMessage/ErrorMessage";
+
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import { Image } from "./App.types";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 const notify = () => toast("необхідно ввести текст для пошуку зображень");
 
