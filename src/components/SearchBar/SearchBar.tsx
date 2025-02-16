@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./SearchBar.module.css";
 
 interface SearchBarProp {
@@ -7,16 +7,22 @@ interface SearchBarProp {
 }
 
 const SearchBar: React.FC<SearchBarProp> = ({ notify, onSearch }) => {
+  const [input, setInput] = useState<string>("");
   const checkInputValue = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("event", event);
      console.log("event.target", event.target);
+   
+     console.log("input", input);
     
-    if (event.target.search.value.trim() === "") {
+    if (input.trim() === "") {
       return notify();
+    
     }
    
-    return onSearch(event.target.search.value);
+   onSearch(input);
+    setInput("")
+    
   };
   return (
     <header>
@@ -27,6 +33,8 @@ const SearchBar: React.FC<SearchBarProp> = ({ notify, onSearch }) => {
           autoFocus
           placeholder="Search images and photos"
           name="search"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
         />
         <button type="submit" className={styles.searchButton}>
           Search
