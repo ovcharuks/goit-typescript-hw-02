@@ -33,7 +33,7 @@ const App:React.FC = () => {
     setPhotos([]);
   };
 
-  const nextPagePusher = (nextPage: any) => {
+  const nextPagePusher = () => {
     setPage((prev) => {
       return prev + 1;
     });
