@@ -4,9 +4,10 @@ import styles from "./ImageCard.module.css";
 interface ImageCardProps {
   photo: any;
   onClick: () => void;
+  user: string;
 }
 const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
-  console.log("photo", photo)
+  console.log("photo !!!!", photo.user.username)
   return (
     <>
       <div onClick={onClick} className={styles.photoBox}>
@@ -15,7 +16,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
           alt={photo.alt_description}
           className={photo}
         />
-        <div className={styles.cardDescription}>Athor: {photo.user.user}</div>
+        <div className={styles.cardDescription}>Athor: {photo.user.username}</div>
         
       </div>
     </>
