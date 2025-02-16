@@ -1,7 +1,13 @@
 import styles from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
+import { Image } from "../App/App.types";
 
-const ImageGallery = ({ photos, onPhotoClick }) => {
+interface ImageGalleryProps {
+  photos: Image[];
+  onPhotoClick: (image: Image) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ photos, onPhotoClick }) => {
   const length = photos.length;
   console.log(length);
 

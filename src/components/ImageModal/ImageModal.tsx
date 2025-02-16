@@ -1,8 +1,14 @@
 import ReactModal from "react-modal";
 import styles from "./ImageModal.module.css";
 import { ClimbingBoxLoader } from "react-spinners";
+import { Image } from "../App/App.types";
 
-const ImageModal = ({ photo, onClose }) => (
+interface ImageModalProps {
+  photo: Image;
+  onClose: () => void;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => (
   <ReactModal isOpen onRequestClose={onClose} ariaHideApp={false}>
     <div>
       <img

@@ -1,5 +1,11 @@
+import { Image } from "../App/App.types";
 import styles from "./ImageCard.module.css";
-const ImageCard = ({ photo, onClick }) => {
+
+interface ImageCardProps {
+  photo: Image;
+  onClick: () => void;
+}
+const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
   return (
     <>
       <div onClick={onClick} className={styles.photoBox}>

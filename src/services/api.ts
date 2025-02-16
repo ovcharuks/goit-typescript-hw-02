@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const fetchPhotos = async (query) => {
+export const fetchPhotos = async (query:string) => {
 const { data } = await axios.get(`https://api.unsplash.com/photos/?;client_id=nAqYtCF7l8JE6SJBDYVHGnZ2Qc3TJV6mXaOTUZQGnWs`);
 
 return data;

@@ -1,5 +1,9 @@
 import styles from "./LoadMoreBtn.module.css";
-const LoadMoreBtn = ({ onNextPage }) => {
+
+interface LoadMoreBtnProps {
+  onNextPage: () => void;
+}
+const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ onNextPage }) => {
   return (
     <button onClick={onNextPage} className={styles.loadMoreBtn}>
       Load more

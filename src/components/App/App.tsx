@@ -1,31 +1,33 @@
-import { Component, useState } from "react";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+
 import { useEffect } from "react";
 import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
-import toast, { Toaster } from "react-hot-toast";
-import axios from "axios";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "/src/components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
+import { Image } from "./App.types";
 
 const notify = () => toast("необхідно ввести текст для пошуку зображень");
 
 const BASE_URL = "https://api.unsplash.com";
 const KEY = "nAqYtCF7l8JE6SJBDYVHGnZ2Qc3TJV6mXaOTUZQGnWs";
 
-function App() {
-  const [photos, setPhotos] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIserror] = useState(false);
-  const [serchValue, setSerchValue] = useState("");
-  const [page, setPage] = useState(0);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+const App:React.FC = () => {
+  const [photos, setPhotos] = useState<Image[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIserror] = useState<string | boolean>(false);
+  const [serchValue, setSerchValue] = useState<string>("");
+  const [page, setPage] = useState<number>(0);
+  const [selectedPhoto, setSelectedPhoto] = useState<Image | null>(null);
 
   console.log(selectedPhoto);
   console.log(photos);
-  const handleSearchValue = (valueFromInput) => {
+  const handleSearchValue = (valueFromInput:string) => {
     setSerchValue(valueFromInput);
     setPage(1);
     setPhotos([]);
@@ -37,7 +39,7 @@ function App() {
     });
   };
 
-  const openModal = (image) => {
+  const openModal = (image: Image) => {
     setSelectedPhoto(image);
   };
 

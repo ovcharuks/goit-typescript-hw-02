@@ -1,5 +1,7 @@
 
-const ErrorMessage = () => {
+
+
+const ErrorMessage: React.FC = () => {
 return(
     <h2>Помилка при завантаженні!</h2>
 )

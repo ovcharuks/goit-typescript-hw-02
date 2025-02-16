@@ -1,7 +1,7 @@
 import styles from './Loader.module.css'
 import {Bars} from "react-loader-spinner";
 
-const Loader = () => {
+const Loader: React.FC = () => {
 
     return (
        <div className={styles.spinner}>
