@@ -2,19 +2,19 @@ import { Image } from "../App/App.types";
 import styles from "./ImageCard.module.css";
 
 interface ImageCardProps {
-  photo: any;
+  photo: Image;
   onClick: () => void;
   // user: string;
 }
 const ImageCard: React.FC<ImageCardProps> = ({ photo, onClick }) => {
-  console.log("photo !!!!", photo.user.username)
+ 
   return (
     <>
       <div onClick={onClick} className={styles.photoBox}>
         <img
           src={photo.urls.small}
           alt={photo.alt_description}
-          className={photo}
+          // className={photo}
         />
         {/* <div className={styles.cardDescription}>Athor: {photo.user.user}</div> */}
         

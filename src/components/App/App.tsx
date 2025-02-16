@@ -18,6 +18,12 @@ const notify = () => toast("необхідно ввести текст для п
 const BASE_URL = "https://api.unsplash.com";
 const KEY = "nAqYtCF7l8JE6SJBDYVHGnZ2Qc3TJV6mXaOTUZQGnWs";
 
+interface ImageResponse {
+  total: number;
+  total_pages: number;
+  results: Image[];
+}
+
 const App:React.FC = () => {
   const [photos, setPhotos] = useState<Image[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -57,7 +63,7 @@ const App:React.FC = () => {
         setIsLoading(true);
         setIserror(false);
 
-        const response = await axios.get(`${BASE_URL}/search/photos`, {
+        const response = await axios.get<ImageResponse>(`${BASE_URL}/search/photos`, {
           params: {
             client_id: "nAqYtCF7l8JE6SJBDYVHGnZ2Qc3TJV6mXaOTUZQGnWs",
             page,
