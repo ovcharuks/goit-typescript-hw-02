@@ -3,7 +3,6 @@ import styles from "./SearchBar.module.css";
 
 interface SearchBarProp {
   onSearch: (query: string) => void;
-  // notify: (string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProp> = ({ notify, onSearch }) => {
